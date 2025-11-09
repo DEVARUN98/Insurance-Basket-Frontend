@@ -12,7 +12,7 @@ function ListData() {
 
   const fetchCalculatedValues = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/v1/calculationnew/");
+      const response = await fetch("https://insurance-basket-backend.onrender.com/api/v1/calculationnew/");
       const data = await response.json();
       console.log("Fetched calculated values:", data.results);
       setCalculatedValues(data.results);

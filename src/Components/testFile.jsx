@@ -21,7 +21,7 @@ function Calculator() {
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/comments/', {
+      const response = await fetch('https://insurance-basket-backend.onrender.com/api/v1/comments/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestData),

@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .register-page {
+    background-color: #87c7c9;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .register-box {
+    background-color: #5fa4a6;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+  }
+  
+  .register-input {
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .password-input {
+    padding-right: 10px;
+  }
+  
+  .info-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4e4e4e;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .password-note {
+    color: #8b2d2d;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
+  }
+  
+  .create-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f4d77a;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .create-btn:hover {
+    background-color: #f1d163;
+  }
+  
+  .login-link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .login-link a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  

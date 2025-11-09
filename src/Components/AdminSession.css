@@ -1,0 +1,132 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #7cc3c6;
+}
+.admin-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #7cc3c6;
+  display: flex;
+  flex-direction: column;
+}
+/* --- TOPBAR --- */
+.topbar {
+  position: fixed;         
+  top: 0;
+  left: 0;
+  width: 100%;               
+  height: 60px;             
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;          
+  background-color: #65a4a6;
+  box-sizing: border-box;    
+  z-index: 1000;             
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.logo {
+  height: 45px;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: black;
+}
+
+.highlight {
+  color: #0056b3;
+}
+
+
+.logout-btn:hover {
+  background-color: #ccc;
+}
+.logout-btn {
+  background-color: #dcdcdc;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-left: auto; 
+}
+/* --- FORM SECTION --- */
+.form-container {
+  width: 100vw;
+  min-height: calc(100vh - 100px); 
+  background-color: #7cc3c6;
+  padding: 100px 10px; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  background: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='black' height='12' width='12' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+.calculate-btn {
+  display: block;
+  margin: 40px auto 0;
+  background-color: #5b9698;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 60px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.calculate-btn:hover {
+  background-color: #4a8284;
+}

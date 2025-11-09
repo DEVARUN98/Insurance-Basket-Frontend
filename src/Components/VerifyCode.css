@@ -1,0 +1,51 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .verify-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #8ec7c6; /* teal background */
+  }
+  
+  .verify-box {
+    background-color: #5d9ea0; /* slightly darker teal */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .code-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .verify-btn {
+    background-color: #f3d87a;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .verify-btn:hover {
+    background-color: #e6c85f;
+  }
+  

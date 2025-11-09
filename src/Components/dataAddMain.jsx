@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./AdminSession.css";
 import iblogo from '../iblogo.png';
 
-function AdminSession(){
+function DataAddMain(){
 
   const navigate = useNavigate();
   const goToList = () => {
@@ -28,10 +28,140 @@ const [regYear, setRegYear] = useState("");
 const [policyType, setPolicyType] = useState("");
 const [institution, setInstitution] = useState("");
 const [vehicleType, setVehicleType] = useState("");
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
+  const [odPremium,setOdPremium] = useState(null);
+  const [institute,setInstitute] = useState("")
 
-const calculateRateandSAdd = () => {
-  console.log("Calculate button clicked");
-};
+const calculateRateandSAdd=()=>{
+
+
+    const qtDateValue = qtDateRef.current.value;
+    const regDate = regDateRef.current.value;
+    const seating = seatingRef.current.value;
+
+    console.log("val1",qtDateValue)
+    console.log("val2",regDate)
+    console.log("val3",seating)
+
+    // commented for later check
+
+    const extractYear = qtDateValue ? new Date(qtDateValue).getFullYear():null
+    // setYearOnly(extractYear)
+    const age = extractYear-regYear
+    // setVehicleAge(age)
+    console.log("ageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",age)
+    console.log("extract year",extractYear)
+    let localRate = 0;
+    let localsAdd = 0;
+    if(age<=5){
+        console.log("age less than 5",age)
+        console.log("seating cap",seating)
+        localRate = 1.656
+        if(seating<=18){
+            localsAdd = 350
+        }
+        else if(seating>18 && seating<=36){
+            console.log("seatig b/w 18 & 36",age)
+            localsAdd = 450
+        }
+        else if(seating>36 && seating<=60){
+            localsAdd = 550
+        }
+        else{
+            localsAdd = 680
+        }
+    }
+    else if(age>5 && age <=7){
+        localRate = 1.697
+        if(seatingCapacity<=18){
+            localsAdd = 350
+        }
+        else if(seatingCapacity>18 && seatingCapacity<=36){
+            localsAdd = 450
+        }
+        else if(seatingCapacity>36 && seatingCapacity<=60){
+            localsAdd = 550
+        }
+        else{
+            localsAdd = 680
+        }
+    }
+    else{
+        console.log("age greater")
+        localRate = 1.739
+        if(seatingCapacity<=18){
+            localsAdd = 350
+        }
+        else if(seatingCapacity>18 && seatingCapacity<=36){
+            localsAdd = 450
+        }
+        else if(seatingCapacity>36 && seatingCapacity<=60){
+            localsAdd = 550
+        }
+        else{
+            localsAdd = 680
+        }
+    }
+    CalculatePremium(localRate,localsAdd)    /* COMMENT THIS */
+    console.log("rate "+localRate+localsAdd)
+
+}
+
+const handleCompany = (e) =>{
+  setCompany(e.target.value)
+}
+
+const handlePolicyType = (e) =>{
+  setPolicyType(e.target.value)
+}
+
+const CalculatePremium = async (rate,sAdd) => {
+
+    const requestData = {
+      year: year || null,               // send as string or null
+      dueDate: dueDate || null,         // send as string or null
+      idv: parseFloat(idv) || 0,
+      regno: regno || "",
+      rate: parseFloat(rate) || 0,
+      sAdd: parseFloat(sAdd) || 0,
+      ncb: parseFloat(ncb) || 0,
+      discount: parseFloat(discount) || 0,
+      seatingCapacity: parseInt(seatingCapacity, 10) ,
+      legalLiability: parseFloat(legalLiability) || 0,
+      po: parseFloat(po) || 0,
+      odPremium: parseFloat(odPremium) || 0,
+      regYear: regYear || null,
+      company:company || null,
+      policyType:policyType || null,
+      institute:institute || null
+
+    };
+
+    try {
+        console.log("reqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",requestData);
+      const response = await fetch("https://insurance-basket-backend.onrender.com/api/v1/calculationnew/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestData),
+      });
+
+      const data = await response.json();
+      console.log("resultttttttttttttttttttttttt",data)
+      if (response.ok) {
+        setResult(data);
+        setError("");
+        console.log("Calculation Result:", data);
+      } else {
+        setError("Validation failed: " + JSON.stringify(data));
+        setResult(null);
+      }
+    } catch (err) {
+      setError("Network error: " + err.message);
+      setResult(null);
+    }
+  };
+
 
 return (
   <div className="admin-container">
@@ -120,7 +250,7 @@ return (
         </div>
         <div className="form-group">
           <label>Institution</label>
-          <input value={institution} onChange={(e) => setInstitution(e.target.value)} />
+          <input value={institute} onChange={(e) => setInstitute(e.target.value)} />
         </div>
       </div>
          <button
@@ -136,4 +266,4 @@ return (
   </div>
 );
 }
-export default AdminSession;
+export default DataAddMain;

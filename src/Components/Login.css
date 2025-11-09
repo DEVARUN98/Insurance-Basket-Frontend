@@ -1,0 +1,129 @@
+/* --- GLOBAL PAGE --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #7cc3c6;
+}
+
+/* --- LOGIN CONTAINER --- */
+
+
+.login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- PAGE CONTAINER --- */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* background-color: #7cc3c6;  */
+}
+
+/* --- TOPBAR --- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 40px;
+  background-color: #65a4a6;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  height: 45px;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.highlight {
+  color: #0056b3;
+}
+
+
+.login-box {
+  background-color: #5fa4a6;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+/* --- INPUTS --- */
+.login-input {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 12px 0;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: #f4f4f4;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* --- BUTTON --- */
+.login-btn {
+  width: 100%;
+  background-color: #f4d77a;
+  color: black;
+  /* margin: 12px 0; */
+  margin-top: 12px;
+  margin-left: 12px;
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #4a8284;
+}
+
+/* --- TEXT LINKS --- */
+.forgot-password {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #0056b3;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #000;
+}
+
+.signup-link {
+  color: #0056b3;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* --- ERROR MESSAGE --- */
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
