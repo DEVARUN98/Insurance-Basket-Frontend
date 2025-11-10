@@ -33,8 +33,7 @@ const [vehicleType, setVehicleType] = useState("");
   const [odPremium,setOdPremium] = useState(null);
   const [institute,setInstitute] = useState("")
 
-const calculateRateandSAdd=()=>{
-
+const calculateRateandSAdd=async ()=>{
 
     const qtDateValue = qtDateRef.current.value;
     const regDate = regDateRef.current.value;
@@ -43,15 +42,10 @@ const calculateRateandSAdd=()=>{
     console.log("val1",qtDateValue)
     console.log("val2",regDate)
     console.log("val3",seating)
-
     // commented for later check
 
     const extractYear = qtDateValue ? new Date(qtDateValue).getFullYear():null
-    // setYearOnly(extractYear)
     const age = extractYear-regYear
-    // setVehicleAge(age)
-    console.log("ageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",age)
-    console.log("extract year",extractYear)
     let localRate = 0;
     let localsAdd = 0;
     if(age<=5){
@@ -103,7 +97,8 @@ const calculateRateandSAdd=()=>{
             localsAdd = 680
         }
     }
-    CalculatePremium(localRate,localsAdd)    /* COMMENT THIS */
+    await CalculatePremium(localRate,localsAdd)    /* COMMENT THIS */
+    navigate("/listdata");
     console.log("rate "+localRate+localsAdd)
 
 }
@@ -255,9 +250,7 @@ return (
       </div>
          <button
                className="calculate-btn"
-               onClick={() => {
-               calculateRateandSAdd();
-               navigate("/listdata");
+               onClick={async () => {await calculateRateandSAdd();
                }}
                >
               Calculate
