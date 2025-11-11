@@ -39,7 +39,7 @@ function App(){
       { <Route path='/admin' element={<DataAddMain />} />}
       { <Route path='/listdata' element={<ListDataSearch />} />}
 
-      dataAddMain
+      
       {/* {<Route path='/display' element={<DataDisplay />} />} */}
       {/* { <Route path='/search' element={<SearchComponent />} /> } */}
       {/* { <Route path='/list' element={<ListData />} /> } */}
