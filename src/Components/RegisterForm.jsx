@@ -3,9 +3,9 @@ import "./RegisterForm.css";
 function RegisterForm() {
 
     const navigate = useNavigate();
-    const goToList = () => {
-       navigate('/login');
-    }
+    // const goToList = () => {
+    //    navigate('/login');
+    // }
   return (
     <div className="register-page">
       <div className="register-box">
@@ -32,7 +32,7 @@ function RegisterForm() {
         </p>
         <button className="create-btn" onClick={() => {navigate("/login");}}>Create</button>
         <p className="login-link">
-            have an account? <a href="#"><p onClick={() => {navigate("/login");}}>Log in</p></a>
+            have an account? <p onClick={() => {navigate("/login");}}>Log in</p>
         </p>
       </div>
     </div>

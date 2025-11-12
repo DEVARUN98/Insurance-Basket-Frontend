@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import  { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminSession.css";
 
@@ -23,11 +23,10 @@ const [po, setPo] = useState("");
 const [company, setCompany] = useState("");
 const [regYear, setRegYear] = useState("");
 const [policyType, setPolicyType] = useState("");
-const [institution, setInstitution] = useState("");
 const [vehicleType, setVehicleType] = useState("");
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState("");
-  const [odPremium,setOdPremium] = useState(null);
+  // const [result, setResult] = useState(null);
+  // const [error, setError] = useState("");
+  // const [odPremium,setOdPremium] = useState(null);
   const [institute,setInstitute] = useState("")
 
 const calculateRateandSAdd=async ()=>{
@@ -99,13 +98,13 @@ const calculateRateandSAdd=async ()=>{
 
 }
 
-const handleCompany = (e) =>{
-  setCompany(e.target.value)
-}
+// const handleCompany = (e) =>{
+//   setCompany(e.target.value)
+// }
 
-const handlePolicyType = (e) =>{
-  setPolicyType(e.target.value)
-}
+// const handlePolicyType = (e) =>{
+//   setPolicyType(e.target.value)
+// }
 
 const CalculatePremium = async (rate,sAdd) => {
 
@@ -121,14 +120,14 @@ const CalculatePremium = async (rate,sAdd) => {
       seatingCapacity: parseInt(seatingCapacity, 10) ,
       legalLiability: parseFloat(legalLiability) || 0,
       po: parseFloat(po) || 0,
-      odPremium: parseFloat(odPremium) || 0,
+      // odPremium: parseFloat(odPremium) || 0,
       regYear: regYear || null,
       company:company || null,
       policyType:policyType || null,
       institute:institute || null
 
     };
-
+    // SETERROR AND SETRESULT COMMENTED ONLY FOR NETLIFY ISSUE
     try {
         console.log("reqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",requestData);
       const response = await fetch("https://insurance-basket-backend.onrender.com/api/v1/calculationnew/", {
@@ -140,16 +139,16 @@ const CalculatePremium = async (rate,sAdd) => {
       const data = await response.json();
       console.log("resultttttttttttttttttttttttt",data)
       if (response.ok) {
-        setResult(data);
-        setError("");
+        // setResult(data);
+        // setError("");
         console.log("Calculation Result:", data);
       } else {
-        setError("Validation failed: " + JSON.stringify(data));
-        setResult(null);
+        // setError("Validation failed: " + JSON.stringify(data));
+        // setResult(null);
       }
     } catch (err) {
-      setError("Network error: " + err.message);
-      setResult(null);
+      // setError("Network error: " + err.message);
+      // setResult(null);
     }
   };
 

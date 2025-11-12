@@ -4,9 +4,9 @@ import "./ForgotPassword.css";
 function ForgotPassword() {
 
     const navigate = useNavigate();
-    const goToList = () => {
-       navigate('/verify');
-    }
+    // const goToList = () => {
+    //    navigate('/verify');
+    // }
   return (
     <div className="forgot-container">
       <div className="forgot-box">

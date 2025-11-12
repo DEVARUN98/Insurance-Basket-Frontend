@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import iblogo from '../iblogo.png'; // Ensure path is correct
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -10,7 +10,7 @@ function ListDataSearch() {
   const path = location.pathname;
   console.log("Current path:", path);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [calculatedValues, setCalculatedValues] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [results, setResults] = useState([]);
