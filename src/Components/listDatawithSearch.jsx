@@ -4,7 +4,6 @@ import iblogo from '../iblogo.png'; // Ensure path is correct
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import './ListDataSearch.css'; // Import CSS file
-// import { useNavigate } from "react-router-dom";
 
 function ListDataSearch() {
   const location = useLocation();

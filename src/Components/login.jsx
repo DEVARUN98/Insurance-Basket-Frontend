@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import iblogo from '../iblogo.png';
 
 function Login() {
   const navigate = useNavigate();

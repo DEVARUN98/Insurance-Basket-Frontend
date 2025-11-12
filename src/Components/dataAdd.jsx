@@ -1,14 +1,11 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminSession.css";
-import iblogo from '../iblogo.png';
 
 function AdminSession(){
 
   const navigate = useNavigate();
-  const goToList = () => {
-     navigate('/display /login /listdata');
-  }
+
 
 const qtDateRef = useRef();
 const regDateRef = useRef();

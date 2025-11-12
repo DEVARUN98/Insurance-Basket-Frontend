@@ -1,14 +1,11 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminSession.css";
-import iblogo from '../iblogo.png';
 
 function DataAddMain(){
 
   const navigate = useNavigate();
-  const goToList = () => {
-     navigate('/display /login /listdata');
-  }
+
 
 const qtDateRef = useRef();
 const regDateRef = useRef();
@@ -42,7 +39,6 @@ const calculateRateandSAdd=async ()=>{
     console.log("val1",qtDateValue)
     console.log("val2",regDate)
     console.log("val3",seating)
-    // commented for later check
 
     const extractYear = qtDateValue ? new Date(qtDateValue).getFullYear():null
     const age = extractYear-regYear
