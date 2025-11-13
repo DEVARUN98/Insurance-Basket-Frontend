@@ -146,13 +146,12 @@ function ListDataSearch() {
                 <th>Id</th>
                 <th>reg no</th>
                 <th>IDV</th>
-                <th>sAdd</th>
-                <th>RATE</th>
                 <th>regYear</th>
                 <th>Discount</th>
                 <th>Company</th>
                 <th>Institution</th>
                 <th>Policy Type</th>
+                <th>Total Premium</th>
                 <th>Payable</th>
               </tr>
             </thead>
@@ -162,14 +161,13 @@ function ListDataSearch() {
                   <td>{res.id}</td>
                   <td>{res.regno}</td>
                   <td>{res.idv}</td>
-                  <td>{res.sAdd}</td>
-                  <td>{res.rate}</td>
                   <td>{res.regYear}</td>
                   <td>{res.discount}</td>
                   <td>{res.company}</td>
-                  <td>{res.institute}</td>
+                  <td>{res.institute}</td> 
                   <td>{res.policyType}</td>
-                  <td>{res.payableAmount?.toFixed(0)}</td>
+                  <td>{res.totalPremium?.toFixed(0)}</td>
+                  <td>{res.payableAmount?.toFixed(0)}</td>    
                 </tr>
               ))}
             </tbody>

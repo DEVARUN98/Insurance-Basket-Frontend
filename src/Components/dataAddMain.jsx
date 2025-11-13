@@ -218,8 +218,8 @@ return (
           <label>Company</label>
           <select value={company} onChange={(e) => setCompany(e.target.value)}>
             <option value="">Select</option>
-            <option value="hdfc">RELIANCE</option>
-            <option value="icici">TATA AIG</option>
+            <option value="Reliance">RELIANCE</option>
+            <option value="Tata AIG">TATA AIG</option>
           </select>
         </div>
         <div className="form-group">
