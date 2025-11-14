@@ -144,9 +144,9 @@ function ListDataSearch() {
             <thead>
               <tr>
                 <th>Id</th>
-                <th>reg no</th>
+                <th>Reg No</th>
                 <th>IDV</th>
-                <th>regYear</th>
+                <th>Reg Year</th>
                 <th>Discount</th>
                 <th>Company</th>
                 <th>Institution</th>

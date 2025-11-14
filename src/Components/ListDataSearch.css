@@ -210,7 +210,7 @@
   flex: 1;
   min-width: 200px;
   transition: border-color 0.2s, box-shadow 0.2s;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* Removed "box-shadow: 0 0 0 2px none" which is not valid. Just use none or a subtle color. */
@@ -231,6 +231,7 @@
   color: #fff;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .add-new-btn {
